@@ -1,0 +1,4 @@
+[core]
+    remote = aws-remote-bucket
+['remote "aws-remote-bucket"']
+    url = s3://udacity-project3-bucket
