@@ -1,9 +1,16 @@
 name: DVC setup
-on: push
+on: 
+  push:
+    branches:
+      main
+    paths:
+      - data/*
+
 jobs:
-  run:
+  run_code:
+    name: Run DVC pull
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: iterative/setup-dvc@v1
-      - run:
-          dvc pull
+      
