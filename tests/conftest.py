@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from ml.data import process_data
 
 # define pytest fixtures
-pytest.fixture(scope="session")
+@pytest.fixture(scope="session")
 def prep_train_data():
     """Prepare data for machine learning model."""
     data = pd.read_csv("/Users/moscao/Projects/udacity_mlops/project3/udacity_mldevops_project3/data/census.csv")

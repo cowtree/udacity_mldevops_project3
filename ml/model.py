@@ -20,6 +20,8 @@ def train_model(X_train, y_train):
     """
 
     model = RandomForestClassifier()
+    ''' takes too long time to run on local machine
+    
     param_grid = {
         "n_estimators": [100, 200, 300],
         "max_depth": [5, 10, 15],
@@ -27,8 +29,10 @@ def train_model(X_train, y_train):
         "min_samples_leaf": [1, 2, 4],
     }
     grid = GridSearchCV(model, param_grid, cv=3, verbose=1, n_jobs=-1)
-    grid.fit(X_train, y_train)
-    return grid.best_estimator_
+    '''
+
+    model.fit(X_train, y_train)
+    return model
 
 def compute_model_metrics(y, preds):
     """
@@ -57,7 +61,7 @@ def inference(model, X):
 
     Inputs
     ------
-    model : ???
+    model :
         Trained machine learning model.
     X : np.array
         Data used for prediction.
