@@ -1,6 +1,6 @@
 '''This is the main module for the ml package. It contains the following'''
 
-import model
-import data
+from model import *
+from data import *
 
 print('ml package imported')
