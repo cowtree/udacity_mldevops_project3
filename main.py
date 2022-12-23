@@ -28,9 +28,9 @@ def read_root():
     """welcome message
 
     Returns:
-        _type_: _description_
+        str: Welcome message
     """    
-    return {"Hello": "World"}
+    return "Hello world"
 
 # POST model inference endpoint
 @app.post("/predict")
