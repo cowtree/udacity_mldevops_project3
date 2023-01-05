@@ -11,9 +11,6 @@ import pandas as pd
 from ml.model import inference
 from ml.data import process_data
 
-global model, encoder, binarizer
-
-
 class Employee(BaseModel):
     """Employee data model"""
 
