@@ -1,6 +1,9 @@
 # udacity_mldevops_project3
 Deploying a Machine Learning Model on Heroku with FastAPI in order to predict (binrary classification) the salary of an employee based on some metrics
 
+##
+[Github Link](https://github.com/cowtree/udacity_mldevops_project3)
+
 ## Content in this project
 - Data version control using DVC
 - Implementation of CI/CD pipeline 
@@ -56,6 +59,8 @@ Deploying a Machine Learning Model on Heroku with FastAPI in order to predict (b
 
 ## Data exploration
  - ```eda_census.ipynb``` [notebook](eda_census.ipynb) contains some in-depth look into the data 
+ - Whitespaces in the datasheet was removed using:
+    ```sed -i.bak 's/[[:space:]]*,[[:space:]]*/,/g' data/census.csv```
  - The dataset is a table of employees with different attributes which are used to predict the salary in a binary fashion (<=50k || >50k):
 
 ```python
