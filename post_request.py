@@ -1,4 +1,5 @@
 import requests
+import json
 
 data_dict = {
     "age": 39,
@@ -18,6 +19,6 @@ data_dict = {
 
 }
 
-response = requests.post("http://localhost:8000/predict", json=data_dict)
+response = requests.post(url="https://mldevops-project3-prod.herokuapp.com/predict", json=json.dumps(data_dict))
 print(response.status_code)
 print(response.json())

@@ -93,6 +93,7 @@ Deploying a Machine Learning Model on Heroku with FastAPI in order to predict (b
  - It consists of two functions:
     - **GET**: Display a welcome message at the root path
     - **POST**: Given input dataset of an employee predict the salary of the employee
+ - Example of parameters of the [Example POST](example.png)   
 
 ### Tests
 - Tets can be found in ```tests/``` folder
