@@ -15,7 +15,7 @@ logging.basicConfig(filename='train_model.log', level=logging.INFO)
 
 
 # Add code to load in the data.
-data = pd.read_csv("/Users/moscao/Projects/udacity_mlops/project3/udacity_mldevops_project3/data/census.csv")
+data = pd.read_csv("data/census.csv")
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 logging.info('Splitting data into train and test')

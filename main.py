@@ -38,6 +38,14 @@ class Prediction(BaseModel):
 
 app = FastAPI()
 
+@app.on_event("startup")
+async def startup_event(): 
+    """Load the model and encoder at startup"""
+    global model, encoder, binarizer
+    model = pickle.load(open("./model/model.pkl", "rb"))
+    encoder = pickle.load(open("./model/encoder.pkl", "rb"))
+    binarizer = pickle.load(open("./model/lb.pkl", "rb"))
+
 @app.get("/")
 def read_root():
     """welcome message
@@ -58,12 +66,6 @@ async def predict(data: Employee):
     Returns:
         dict: The model predictions.
     """
-
-    # Load the model.
-    model = pickle.load(open("model.pkl", "rb"))
-    encoder = pickle.load(open("encoder.pkl", "rb"))
-    lb = pickle.load(open("lb.pkl", "rb"))
-
     # Convert the input data into a dataframe.
     data_df = pd.DataFrame([data.dict()])
 
@@ -79,7 +81,7 @@ async def predict(data: Employee):
 ]
 
     # Preprocess the input data.
-    X, _, _, _ = process_data(data_df, encoder=encoder, categorical_features=cat_features, lb=lb, training=False)
+    X, _, _, _ = process_data(data_df, encoder=encoder, categorical_features=cat_features, lb=binarizer, training=False)
 
     # Get the model's predictions.
     prediction = inference(model, X)

@@ -1,7 +1,10 @@
 # udacity_mldevops_project3
 Deploying a Machine Learning Model on Heroku with FastAPI in order to predict (binrary classification) the salary of an employee based on some metrics
 
-##
+The ideas and guidelines can be foudn here [README Starter Guide](README_starter.png)
+
+
+## Github Link
 [Github Link](https://github.com/cowtree/udacity_mldevops_project3)
 
 ## Content in this project

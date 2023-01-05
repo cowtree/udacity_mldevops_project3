@@ -1,0 +1,23 @@
+INFO:root:Loading data
+INFO:root:Loading data
+INFO:root:Splitting data into train and test
+INFO:root:Evaluating model
+INFO:root:Loading data
+INFO:root:Splitting data into train and test
+INFO:root:Evaluating model
+2022-12-23 13:17:17,936 Loading data
+2022-12-23 13:17:18,032 Splitting data into train and test
+2022-12-23 13:17:18,071 Evaluating model
+2022-12-23 13:17:18,180 Saving metrics
+2022-12-23 13:17:18,180 -----------------------
+2022-12-23 13:17:18,180 Fbeta: 0.9573210768220617
+2022-12-23 13:17:18,180 Precision: 0.9298469387755102
+2022-12-23 13:17:18,181 Recall: 0.9433840181171141
+2022-12-23 13:17:34,281 Loading data
+2022-12-23 13:17:34,396 Splitting data into train and test
+2022-12-23 13:17:34,438 Evaluating model
+2022-12-23 13:17:34,559 Saving metrics
+2022-12-23 13:17:34,559 -----------------------
+2022-12-23 13:17:34,559 Fbeta: 0.9573210768220617
+2022-12-23 13:17:34,559 Precision: 0.9298469387755102
+2022-12-23 13:17:34,559 Recall: 0.9433840181171141
