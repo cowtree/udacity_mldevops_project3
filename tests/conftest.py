@@ -3,13 +3,12 @@ import pytest
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from ml.data import process_data
-import os
 
 # define pytest fixtures
 @pytest.fixture(scope="session")
 def prep_train_data():
     """Prepare data for machine learning model."""
-    filepath = os.path.join(os.path.abspath(os.curdir) + "/data/census.csv")
+    filepath = "./data/census.csv"
     data = pd.read_csv(filepath)
     train, _ = train_test_split(data, test_size=0.20)
 
