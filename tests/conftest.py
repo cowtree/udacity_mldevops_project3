@@ -27,3 +27,45 @@ def prep_train_data():
         )
 
     return x_train, y_train
+
+@pytest.fixture(scope="session")
+def prep_api_data_lowsalary():
+    """Prepare data low salary for testing API model inference."""
+    data_dict = {
+        "age": 39,
+        "workclass": "State-gov",
+        "fnlwgt": 77516,
+        "education": "Bachelors",
+        "education-num" : 13,
+        "marital-status" : "Never-married",
+        "occupation" : "Adm-clerical",
+        "relationship" : "Not-in-family",
+        "race" : "White",
+        "sex" : "Male",
+        "capital-gain" : 2174,
+        "capital-loss" : 0,
+        "hours-per-week" : 40,
+        "native-country"  : "United-States"
+
+    }
+    return data_dict
+
+@pytest.fixture(scope="session")
+def prep_api_data_highsalary():
+    """Prepare data high salary for testing API model inference."""
+    return {
+        "age": 52,
+        "workclass": "Self-emp-inc",
+        "fnlwgt": 209642,
+        "education": "HS-grad",
+        "education-num" : 9,
+        "marital-status" : "Married-civ-spouse",
+        "occupation" : "Exec-managerial",
+        "relationship" : "Wife",
+        "race" : "White",
+        "sex" : "Female",
+        "capital-gain" : 15024,
+        "capital-loss" : 0,
+        "hours-per-week" : 40,
+        "native-country"  : "United-States"
+    }

@@ -9,6 +9,7 @@ import pandas as pd
 from model import train_model, compute_model_metrics, inference
 from data import process_data
 
+
 # init loggingfile
 logging.basicConfig(filename='train_model.log', level=logging.INFO)
 
