@@ -19,6 +19,6 @@ data_dict = {
 
 }
 
-response = requests.post(url="https://mldevops-project3-prod.herokuapp.com/predict", json=json.dumps(data_dict))
+response = requests.post(url="https://mldevops-project3-prod.herokuapp.com/predict", json=data_dict)
 print(response.status_code)
 print(response.json())
