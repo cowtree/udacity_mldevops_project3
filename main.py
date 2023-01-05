@@ -11,6 +11,8 @@ import pandas as pd
 from ml.model import inference
 from ml.data import process_data
 
+global model, encoder, binarizer
+
 
 class Employee(BaseModel):
     """Employee data model"""
@@ -39,12 +41,13 @@ class Prediction(BaseModel):
 app = FastAPI()
 
 @app.on_event("startup")
-async def startup_event(): 
+async def startup_event():
     """Load the model and encoder at startup"""
-    global model, encoder, binarizer
-    model = pickle.load(open("./model/model.pkl", "rb"))
-    encoder = pickle.load(open("./model/encoder.pkl", "rb"))
-    binarizer = pickle.load(open("./model/lb.pkl", "rb"))
+    print('hi')
+    global MODEL, ENCODER, BINARIZER
+    MODEL = pickle.load(open("model.pkl", "rb"))
+    ENCODER = pickle.load(open("encoder.pkl", "rb"))
+    BINARIZER = pickle.load(open("lb.pkl", "rb"))
 
 @app.get("/")
 def read_root():
@@ -66,6 +69,7 @@ async def predict(data: Employee):
     Returns:
         dict: The model predictions.
     """
+
     # Convert the input data into a dataframe.
     data_df = pd.DataFrame([data.dict()])
 
@@ -81,10 +85,10 @@ async def predict(data: Employee):
 ]
 
     # Preprocess the input data.
-    X, _, _, _ = process_data(data_df, encoder=encoder, categorical_features=cat_features, lb=binarizer, training=False)
+    X, _, _, _ = process_data(data_df, encoder=ENCODER, categorical_features=cat_features, lb=BINARIZER, training=False)
 
     # Get the model's predictions.
-    prediction = inference(model, X)
+    prediction = inference(MODEL, X)
 
     if prediction == 0:
         prediction = "<=50K"
