@@ -1,8 +1,7 @@
 # udacity_mldevops_project3
 Deploying a Machine Learning Model on Heroku with FastAPI in order to predict (binrary classification) the salary of an employee based on some metrics
 
-The ideas and guidelines can be foudn here [README Starter Guide](README_starter.png)
-
+The ideas and guidelines can be foudn here [README Starter Guide](README_starter.md)
 
 ## Github Link
 [Github Link](https://github.com/cowtree/udacity_mldevops_project3)
@@ -13,6 +12,11 @@ The ideas and guidelines can be foudn here [README Starter Guide](README_starter
 - Machine Learning Model training and inference
 - FASTAPI application for model inference
 - Deployment on Heroku with automatic deployment after successful CI
+
+### Nice to have add-ons (not implemented)
+- Pre-commit hooks to speed up CI
+- Integrating MLflow pipeline into the ML training/inference 
+- Frontend development (e.g., Typescript, NextJS)
 
 ## Folder structure
 ```
@@ -87,13 +91,14 @@ The ideas and guidelines can be foudn here [README Starter Guide](README_starter
 
 
 ### Model
-- In this example here, a random forest model was trained on the given dataset ([census dataset](/data/census.csv)) and 
+- In this example a random forest model was trained on the given dataset ([census dataset](/data/census.csv)) with a 80/20 train/test split
+- An in-depth investigation of features was conducted on specific slices to determine likely biases
 - For more details on model performance, please have a look at the [model card](model_card.md)
 
 
  ### API
  - The API was impelemented using fastAPI framework
- - It consists of two functions:
+ - It consists of two operations:
     - **GET**: Display a welcome message at the root path
     - **POST**: Given input dataset of an employee predict the salary of the employee
  - Example of parameters of the [Example POST](example.png)   
